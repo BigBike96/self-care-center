@@ -1,6 +1,6 @@
-var affirmationButton = document.querySelector('#affirmation');
-var mantraButton = document.querySelector('#mantra');
-var receiveMessageButton = document.querySelector('#receive-message');
+// var affirmationButton = document.querySelector('#affirmation');
+// var mantraButton = document.querySelector('#mantra');
+var receiveMessageButton = document.querySelector('#btn');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -38,20 +38,32 @@ var mantras = [
   "Rice is great if you're really hungry and want to eat two thousand of something."
 ];
 
+receiveMessageButton.addEventListener('click', prepareMessage);
 // select a radio
-affirmationButton.addEventListener('click', produceQuote);
-mantraButton.addEventListener('click', produceQuote);
+// affirmationButton.addEventListener('click', function() {
+//   produceQuote('affirmation');
+// });
+//
+// mantraButton.addEventListener('click', function() {
+//   produceQuote('mantra');
+// });
 
-
+prepareMessage() {
+  var selectedRadio = document.querySelector('input[name="choice"]');
+  var message;
+  if (selectedRadio === 'affirmations') {
+    message = affirmations[randomizer(affirmations)];
+  }
+  if (selectedRadio === 'mantras') {
+    message = mantras[randomizer(mantras)];
+  }
+  displayMessage(message);
+}
 // click recieve Message
-
-// display mantra, hide image
-
 // two anonymos functions, each passes a string
 // function with control flow to determine which array to search
 // pass value to dispayQuote function
-
-
+// display mantra, hide image
 function randomizer(array) {
   return Math.floor(Math.random() * array.length);
 }
