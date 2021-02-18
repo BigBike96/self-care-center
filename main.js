@@ -1,7 +1,6 @@
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#btn');
-// var iconMessageArea = document.querySelector('#icon-show-message');
 var iconMessageArea = document.querySelector('.icon');
 
 var affirmations = [
@@ -43,7 +42,6 @@ var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
 
-
 function prepareMessage() {
   if (affirmationButton.checked) {
     message = affirmations[randomizer(affirmations)];
@@ -51,11 +49,11 @@ function prepareMessage() {
   if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
-  displayMessage(message);
+  displayMessage();
 }
 
-function displayMessage(string) {
-  iconMessageArea.innerText = string;
+function displayMessage() {
+  iconMessageArea.innerText = message;
 }
 
 function randomizer(array) {
