@@ -54,6 +54,8 @@ function prepareMessage() {
 }
 
 function displayMessage() {
+  iconMessageArea.classList.remove('hidden');
+  mindfulIcon.classList.add('hidden');
   iconMessageArea.innerText = message;
 }
 
