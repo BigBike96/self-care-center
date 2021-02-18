@@ -37,3 +37,21 @@ var mantras = [
   "This shirt is dry clean only. Which means... it's dirty.",
   "Rice is great if you're really hungry and want to eat two thousand of something."
 ];
+
+// select a radio
+// affirmationButton.addEventListener('click', produceQuote);
+// mantraButton.addEventListener('click', produceQuote);
+
+
+// click recieve Message
+
+// display mantra, hide image
+
+// two anonymos functions, each passes a string
+// function with control flow to determine which array to search
+// pass value to dispayQuote function
+
+
+function randomizer(array) {
+  return Math.floor(Math.random() * array.length);
+}
