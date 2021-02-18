@@ -45,10 +45,10 @@ receiveMessageButton.addEventListener('click', prepareMessage);
 
 
 function prepareMessage() {
-  if (affirmationButton) {
+  if (affirmationButton.checked) {
     message = affirmations[randomizer(affirmations)];
   }
-  if (mantraButton) {
+  if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
   displayMessage(message);
