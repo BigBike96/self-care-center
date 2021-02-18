@@ -1,6 +1,8 @@
-// var affirmationButton = document.querySelector('#affirmation');
-// var mantraButton = document.querySelector('#mantra');
+var affirmationButton = document.querySelector('#affirmation');
+var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#btn');
+// var iconMessageArea = document.querySelector('#icon-show-message');
+var iconMessageArea = document.querySelector('.icon');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -24,7 +26,7 @@ var mantras = [
   "The depressing thing about tennis is that no matter how good I get, I'll never be as good as a wall.",
   "Dogs are forever in the push up postion.",
   "I wanted to buy a candle holder, but the store didn't have one. So I got a cake.",
-  "It's weird... people say they're not like apes. Now how do you explain football then?",
+  "It's weird, people say they're not like apes. Now how do you explain football then?",
   "I'm sick of following my dreams. I'm just going to ask them where they're going and hook up with them later.",
   "Every book is a children's book if the kid can read!",
   "I remixed a remix, it was back to normal.",
@@ -34,36 +36,28 @@ var mantras = [
   "A severed foot is the ultimate stocking stuffer.",
   "I'd like to get four people who do cart wheels very good, and make a cart.",
   "I like Kit-Kat, unless I'm with four or more people.",
-  "This shirt is dry clean only. Which means... it's dirty.",
+  "This shirt is dry clean only. Which means, it's dirty.",
   "Rice is great if you're really hungry and want to eat two thousand of something."
 ];
+var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
-// select a radio
-// affirmationButton.addEventListener('click', function() {
-//   produceQuote('affirmation');
-// });
-//
-// mantraButton.addEventListener('click', function() {
-//   produceQuote('mantra');
-// });
 
-prepareMessage() {
-  var selectedRadio = document.querySelector('input[name="choice"]');
-  var message;
-  if (selectedRadio === 'affirmations') {
+
+function prepareMessage() {
+  if (affirmationButton) {
     message = affirmations[randomizer(affirmations)];
   }
-  if (selectedRadio === 'mantras') {
+  if (mantraButton) {
     message = mantras[randomizer(mantras)];
   }
   displayMessage(message);
 }
-// click recieve Message
-// two anonymos functions, each passes a string
-// function with control flow to determine which array to search
-// pass value to dispayQuote function
-// display mantra, hide image
+
+function displayMessage(string) {
+  iconMessageArea.innerText = string;
+}
+
 function randomizer(array) {
   return Math.floor(Math.random() * array.length);
 }
