@@ -39,8 +39,8 @@ var mantras = [
 ];
 
 // select a radio
-// affirmationButton.addEventListener('click', produceQuote);
-// mantraButton.addEventListener('click', produceQuote);
+affirmationButton.addEventListener('click', produceQuote);
+mantraButton.addEventListener('click', produceQuote);
 
 
 // click recieve Message
