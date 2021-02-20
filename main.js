@@ -1,9 +1,11 @@
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
-var receiveMessageButton = document.querySelector('#btn');
+var receiveMessageButton = document.querySelector('#receiveMessageButton');
 var iconMessageArea = document.querySelector('.icon');
 var mindfulIcon = document.querySelector('.mindful-icon');
-var userMessage = document.querySelector('.user-message');
+var addMessageButton = document.querySelector('#addMessageButton');
+
+
 
 
 var affirmations = [
@@ -44,6 +46,7 @@ var mantras = [
 var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
+addMessageButton.addEventListener('click', addUserMessage);
 
 function prepareMessage() {
   if (affirmationButton.checked) {
@@ -66,5 +69,5 @@ function displayMessage() {
 }
 
 function addUserMessage() {
-
+  
 }
