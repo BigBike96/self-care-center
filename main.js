@@ -12,6 +12,7 @@ var messageInput = document.querySelector('#messageInput');
 var showAffAddition = document.querySelector('.affirmation-addition');
 var showMatAddition = document.querySelector('.mantra-addition');
 var showInput = document.querySelector('.message-input');
+var receiveMessageButtons = document.querySelector('.submit-message');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -51,7 +52,7 @@ var mantras = [
 var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
-addMessageButton.addEventListener('click', addUserMessage);
+addMessageButton.addEventListener('click', displayInputs);
 
 function prepareMessage() {
   if (affirmationButton.checked) {
@@ -72,16 +73,33 @@ function displayMessage() {
   mindfulIcon.classList.add('hidden');
   iconMessageArea.innerText = message;
 }
+
+
 // take message from message messageInput
 // stringify() message?
 // assign to global variable
 // get input choice and send to message to appropirate array
 // use displayMessage() to show message
-function addUserMessage() {
-  message = JSON.stringify(messageInput.value);
-  saveMessage();
-  console.log(message);
-  diplayMessage();
+function displayInputs() {
+    showAffAddition.classList.remove('hidden');
+    showMatAddition.classList.remove('hidden');
+    showInput.classList.remove('hidden');
+    receiveMessageButtons.classList.remove('hidden');
 }
 
-function saveMessage()
+function addUserMessage() {
+  message = JSON.stringify(messageInput.value);
+  console.log(message);
+  saveMessage();
+
+}
+// displayMessage();
+
+function saveMessage() {
+  if (affirmationAddition.checked) {
+    affirmations.push(message);
+  }
+  if (mantraAddition.checked) {
+    mantras.push(message);
+  }
+}
