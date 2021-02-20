@@ -1,20 +1,16 @@
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#receiveMessageButton');
-var iconMessageArea = document.querySelector('.icon');
-var mindfulIcon = document.querySelector('.mindful-icon');
+var iconMessageArea = document.querySelector('#iconShowMessage');
+var mindfulIcon = document.querySelector('#mindfulIcon');
 
-var addMessageButton = document.querySelector('#addMessageButton');
+var messageAddButton = document.querySelector('#messageAddButton');
+
+// try querySelectorAll and a for loop
 var affirmationAddition = document.querySelector('#affirmationAddition');
 var mantraAddition = document.querySelector('#mantraAddition');
 var messageInput = document.querySelector('#messageInput');
-
-var showAffAddition = document.querySelector('.affirmation-addition');
-var showMatAddition = document.querySelector('.mantra-addition');
-var showInput = document.querySelector('.message-input');
-var submitMessageButton = document.querySelector('.submit-message');
-var messageSubmit = document.querySelector('#messageSubmit')
-
+var messageSubmit = document.querySelector('#messageSubmit');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -54,7 +50,7 @@ var mantras = [
 var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
-addMessageButton.addEventListener('click', displayInputs);
+messageAddButton.addEventListener('click', displayInputs);
 messageSubmit.addEventListener('click', addUserMessage);
 
 function prepareMessage() {
@@ -64,6 +60,7 @@ function prepareMessage() {
   if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
+  // checkDisplayArea();
   displayMessage();
 }
 
@@ -77,6 +74,17 @@ function displayMessage() {
   iconMessageArea.innerText = message;
 }
 
+function hideMessage() {
+  iconMessageArea.classList.add('hidden');
+}
+
+function checkDisplayArea() {
+  if (!messageSubmit.classList.contains('hidden')) {
+    console.log(messageSubmit.classList[1])
+    hideMessage();
+  }
+}
+
 
 // take message from message messageInput
 // stringify() message?
@@ -84,14 +92,15 @@ function displayMessage() {
 // get input choice and send to message to appropirate array
 // use displayMessage() to show message
 function displayInputs() {
-    showAffAddition.classList.toggle('hidden');
-    showMatAddition.classList.toggle('hidden');
-    showInput.classList.toggle('hidden');
-    submitMessageButton.classList.toggle('hidden');
+    checkDisplayArea();
+    affirmationAddition.classList.toggle('hidden');
+    mantraAddition.classList.toggle('hidden');
+    messageInput.classList.toggle('hidden');
+    messageSubmit.classList.toggle('hidden');
+    mindfulIcon.classList.add('hidden');
 }
 
 function addUserMessage() {
-  console.log(messageInput.value);
   message = messageInput.value;
   saveMessage();
   displayInputs();
