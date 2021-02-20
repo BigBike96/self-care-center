@@ -81,10 +81,10 @@ function displayMessage() {
 // get input choice and send to message to appropirate array
 // use displayMessage() to show message
 function displayInputs() {
-    showAffAddition.classList.remove('hidden');
-    showMatAddition.classList.remove('hidden');
-    showInput.classList.remove('hidden');
-    receiveMessageButtons.classList.remove('hidden');
+    showAffAddition.classList.toggle('hidden');
+    showMatAddition.classList.toggle('hidden');
+    showInput.classList.toggle('hidden');
+    receiveMessageButtons.classList.toggle('hidden');
 }
 
 function addUserMessage() {
