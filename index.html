@@ -11,15 +11,22 @@
     <main>
       <section>
         <input type="radio" name="choice" value="affirmation" id="affirmation">
-        <label>affirmation</label>
+         <label>affirmation</label>
         <input type="radio" name="choice" value="mantras" id="mantra">
-        <label>mantra</label>
-        <input type="button" name="receive-message" class="receive-message" id="btn">
-        <label>Receive Message</label>
+         <label>mantra</label>
+        <button type="button" name="receive-message" class="receive-message" id="receiveMessageButton">Receive Message</button>
       </section>
       <section>
         <img class="mindful-icon" src="./assets/meditate.svg">
         <h3 id="iconShowMessage" class="icon hidden">icon/message</h3>
+        <input type="radio" name="user-save-choice" value="affirmation" class="affirmation-addition hidden" id="affirmationAddition">
+          <label>affirmation</label>
+        <input type="radio" name="user-save-choice" value="mantra" class="mantra-addition hidden" id="mantraAddition">
+          <label>mantra</label>
+        <input type="text" name="message-input" value="message-input" class="message-input hidden" id="messageInput">
+      </section>
+      <section>
+        <button type="button" name="add-message" id="addMessageButton">Add Message</button>
       </section>
     </main>
     <script type="text/javascript" src="main.js"></script>
