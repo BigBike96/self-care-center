@@ -12,7 +12,9 @@ var messageInput = document.querySelector('#messageInput');
 var showAffAddition = document.querySelector('.affirmation-addition');
 var showMatAddition = document.querySelector('.mantra-addition');
 var showInput = document.querySelector('.message-input');
-var receiveMessageButtons = document.querySelector('.submit-message');
+var submitMessageButton = document.querySelector('.submit-message');
+var messageSubmit = document.querySelector('#messageSubmit')
+
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -53,6 +55,7 @@ var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
 addMessageButton.addEventListener('click', displayInputs);
+messageSubmit.addEventListener('click', addUserMessage);
 
 function prepareMessage() {
   if (affirmationButton.checked) {
@@ -84,12 +87,12 @@ function displayInputs() {
     showAffAddition.classList.toggle('hidden');
     showMatAddition.classList.toggle('hidden');
     showInput.classList.toggle('hidden');
-    receiveMessageButtons.classList.toggle('hidden');
+    submitMessageButton.classList.toggle('hidden');
 }
 
 function addUserMessage() {
-  message = JSON.stringify(messageInput.value);
-  console.log(message);
+  console.log(messageInput.value);
+  message = messageInput.value;
   saveMessage();
 
 }
