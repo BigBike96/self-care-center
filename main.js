@@ -72,7 +72,16 @@ function displayMessage() {
   mindfulIcon.classList.add('hidden');
   iconMessageArea.innerText = message;
 }
-
+// take message from message messageInput
+// stringify() message?
+// assign to global variable
+// get input choice and send to message to appropirate array
+// use displayMessage() to show message
 function addUserMessage() {
-
+  message = JSON.stringify(messageInput.value);
+  saveMessage();
+  console.log(message);
+  diplayMessage();
 }
+
+function saveMessage()
