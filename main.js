@@ -94,7 +94,8 @@ function addUserMessage() {
   console.log(messageInput.value);
   message = messageInput.value;
   saveMessage();
-
+  displayInputs();
+  displayMessage();
 }
 // displayMessage();
 
