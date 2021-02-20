@@ -8,9 +8,6 @@ var messageAddButton = document.querySelector('#messageAddButton');
 var errorMessage = document.querySelector('#errorMessage');
 
 // try querySelectorAll and a for loop
-var affirmationAddition = document.querySelector('#affirmationAddition');
-var mantraAddition = document.querySelector('#mantraAddition');
-
 var typeOfMessage = document.querySelector('#typeOfMessage');
 
 var messageInput = document.querySelector('#messageInput');
@@ -64,7 +61,7 @@ function prepareMessage() {
   if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
-  // checkDisplayArea();
+  checkDisplayArea();
   displayMessage();
 }
 
@@ -76,11 +73,11 @@ function displayMessage() {
 }
 
 function hideMessage() {
-  iconMessageArea.classList.add('hidden');
+  iconMessageArea.classList.toggle('hidden');
 }
 
 function checkDisplayArea() {
-  if (!messageSubmit.classList.contains('hidden')) {
+  if (message) {
     console.log(messageSubmit.classList[1])
     hideMessage();
   }
@@ -90,9 +87,6 @@ function displayInputs() {
     checkDisplayArea();
 
     typeOfMessage.classList.toggle('hidden');
-
-    affirmationAddition.classList.toggle('hidden');
-    mantraAddition.classList.toggle('hidden');
     messageInput.classList.toggle('hidden');
     messageSubmit.classList.toggle('hidden');
     mindfulIcon.classList.add('hidden');
@@ -110,16 +104,6 @@ function addUserMessage() {
   }
 }
 
-// displayMessage();
-
-// function saveMessage() {
-//   if (affirmationAddition.checked) {
-//     affirmations.push(message);
-//   }
-//   if (mantraAddition.checked) {
-//     mantras.push(message);
-//   }
-// }
 function saveMessage() {
   if (typeOfMessage.value === 'affirmation') {
     affirmations.push(message);
