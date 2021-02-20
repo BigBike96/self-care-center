@@ -3,10 +3,15 @@ var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#receiveMessageButton');
 var iconMessageArea = document.querySelector('.icon');
 var mindfulIcon = document.querySelector('.mindful-icon');
+
 var addMessageButton = document.querySelector('#addMessageButton');
+var affirmationAddition = document.querySelector('#affirmationAddition');
+var mantraAddition = document.querySelector('#mantraAddition');
+var messageInput = document.querySelector('#messageInput');
 
-
-
+var showAffAddition = document.querySelector('.affirmation-addition');
+var showMatAddition = document.querySelector('.mantra-addition');
+var showInput = document.querySelector('.message-input');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -69,5 +74,5 @@ function displayMessage() {
 }
 
 function addUserMessage() {
-  
+
 }
