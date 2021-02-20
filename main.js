@@ -5,10 +5,14 @@ var iconMessageArea = document.querySelector('#iconShowMessage');
 var mindfulIcon = document.querySelector('#mindfulIcon');
 
 var messageAddButton = document.querySelector('#messageAddButton');
+var errorMessage = document.querySelector('#errorMessage');
 
 // try querySelectorAll and a for loop
 var affirmationAddition = document.querySelector('#affirmationAddition');
 var mantraAddition = document.querySelector('#mantraAddition');
+
+var typeOfMessage = document.querySelector('#typeOfMessage');
+
 var messageInput = document.querySelector('#messageInput');
 var messageSubmit = document.querySelector('#messageSubmit');
 
@@ -64,9 +68,6 @@ function prepareMessage() {
   displayMessage();
 }
 
-function randomizer(array) {
-  return Math.floor(Math.random() * array.length);
-}
 
 function displayMessage() {
   iconMessageArea.classList.remove('hidden');
@@ -85,14 +86,11 @@ function checkDisplayArea() {
   }
 }
 
-
-// take message from message messageInput
-// stringify() message?
-// assign to global variable
-// get input choice and send to message to appropirate array
-// use displayMessage() to show message
 function displayInputs() {
     checkDisplayArea();
+
+    typeOfMessage.classList.toggle('hidden');
+
     affirmationAddition.classList.toggle('hidden');
     mantraAddition.classList.toggle('hidden');
     messageInput.classList.toggle('hidden');
@@ -101,18 +99,36 @@ function displayInputs() {
 }
 
 function addUserMessage() {
-  message = messageInput.value;
-  saveMessage();
-  displayInputs();
-  displayMessage();
+  if (typeOfMessage.value === 'affirmation' || typeOfMessage.value === 'mantra') {
+    message = messageInput.value;
+    saveMessage();
+    displayInputs();
+    displayMessage();
+    errorMessage.classList.add('hidden');
+  } else {
+    errorMessage.classList.remove('hidden');
+  }
 }
+
 // displayMessage();
 
+// function saveMessage() {
+//   if (affirmationAddition.checked) {
+//     affirmations.push(message);
+//   }
+//   if (mantraAddition.checked) {
+//     mantras.push(message);
+//   }
+// }
 function saveMessage() {
-  if (affirmationAddition.checked) {
+  if (typeOfMessage.value === 'affirmation') {
     affirmations.push(message);
   }
-  if (mantraAddition.checked) {
+  if (typeOfMessage.value === 'mantra') {
     mantras.push(message);
   }
+}
+
+function randomizer(array) {
+  return Math.floor(Math.random() * array.length);
 }
