@@ -1,8 +1,13 @@
 var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
-var receiveMessageButton = document.querySelector('#btn');
-var iconMessageArea = document.querySelector('.icon');
-var mindfulIcon = document.querySelector('.mindful-icon')
+var receiveMessageButton = document.querySelector('#receiveMessageButton');
+var iconMessageArea = document.querySelector('#iconShowMessage');
+var mindfulIcon = document.querySelector('#mindfulIcon');
+var messageAddButton = document.querySelector('#messageAddButton');
+var errorMessage = document.querySelector('#errorMessage');
+var typeOfMessage = document.querySelector('#typeOfMessage');
+var messageInput = document.querySelector('#messageInput');
+var messageSubmit = document.querySelector('#messageSubmit');
 
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
@@ -42,6 +47,8 @@ var mantras = [
 var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
+messageAddButton.addEventListener('click', displayInputs);
+messageSubmit.addEventListener('click', addUserMessage);
 
 function prepareMessage() {
   if (affirmationButton.checked) {
@@ -51,6 +58,34 @@ function prepareMessage() {
     message = mantras[randomizer(mantras)];
   }
   displayMessage();
+}
+
+function displayInputs() {
+    typeOfMessage.classList.toggle('hidden');
+    messageInput.classList.toggle('hidden');
+    messageSubmit.classList.toggle('hidden');
+    mindfulIcon.classList.add('hidden');
+}
+
+function addUserMessage() {
+  if (typeOfMessage.value === 'affirmation' || 'mantra') {
+    message = messageInput.value;
+    saveMessage();
+    displayInputs();
+    displayMessage();
+    errorMessage.classList.add('hidden');
+  } else {
+    errorMessage.classList.remove('hidden');
+  }
+}
+
+function saveMessage() {
+  if (typeOfMessage.value === 'affirmation') {
+    affirmations.push(message);
+  }
+  if (typeOfMessage.value === 'mantra') {
+    mantras.push(message);
+  }
 }
 
 function displayMessage() {
