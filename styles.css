@@ -6,12 +6,119 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+* {
+  border: 1px solid peachpuff;
+}
+
+html,
+body {
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  height: 70%;
+}
+
+h1,
+h2 {
+  font-family: Quicksand;
+  font-size: 1.6em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+    margin: 45px;
+}
+
+h2 {
+    margin-top: 70px;
+    margin-bottom: 0px;
+    font-size: 1.2em;
+}
+
+button {
+  background-color: #134d71;
+  color: #ffffff;
+  font-family: Quicksand;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  color: #000000;
+}
+
+.click-button-receive {
+  display: flex;
+  justify-content: center;
+}
+
+.add-message-button {
+  display: flex;
+  justify-content: center;
+}
+
+.mindful-icon-section,
+.random-section {
+  background-color: #ffffff;
+  border-radius: 5px;
+  display: flex;
+}
+
+.random-section {
+  flex-direction: column;
+  align-items: center;
+  /* width: 30em; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-left: 350px;
+  margin-right: 350px;
+  margin-bottom: 50px;
+}
+
+.radio-buttons {
+  justify-content: space-between;
+  padding: inherit;
+  width: 20em;
+  padding: 1em;
+}
+
+.click-button-receive {
+  padding: inherit;
+}
+
+.mindful-icon-section {
+  flex-direction: column;
+  align-items: center;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
 
 .mindful-icon {
-  height: 50px;
-  width: 50px;
+  height: 65px;
+  width: 65px;
 }
 
 .hidden {
   display: none;
+}
+
+.not-visible {
+  visibility: hidden;
 }
