@@ -3,13 +3,9 @@ var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#receiveMessageButton');
 var iconMessageArea = document.querySelector('#iconShowMessage');
 var mindfulIcon = document.querySelector('#mindfulIcon');
-
 var messageAddButton = document.querySelector('#messageAddButton');
 var errorMessage = document.querySelector('#errorMessage');
-
-// try querySelectorAll and a for loop
 var typeOfMessage = document.querySelector('#typeOfMessage');
-
 var messageInput = document.querySelector('#messageInput');
 var messageSubmit = document.querySelector('#messageSubmit');
 
@@ -61,31 +57,10 @@ function prepareMessage() {
   if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
-  checkDisplayArea();
   displayMessage();
 }
 
-
-function displayMessage() {
-  iconMessageArea.classList.remove('hidden');
-  mindfulIcon.classList.add('hidden');
-  iconMessageArea.innerText = message;
-}
-
-function hideMessage() {
-  iconMessageArea.classList.toggle('hidden');
-}
-
-function checkDisplayArea() {
-  if (message) {
-    console.log(messageSubmit.classList[1])
-    hideMessage();
-  }
-}
-
 function displayInputs() {
-    checkDisplayArea();
-
     typeOfMessage.classList.toggle('hidden');
     messageInput.classList.toggle('hidden');
     messageSubmit.classList.toggle('hidden');
@@ -93,7 +68,7 @@ function displayInputs() {
 }
 
 function addUserMessage() {
-  if (typeOfMessage.value === 'affirmation' || typeOfMessage.value === 'mantra') {
+  if (typeOfMessage.value === 'affirmation' || 'mantra') {
     message = messageInput.value;
     saveMessage();
     displayInputs();
@@ -111,6 +86,12 @@ function saveMessage() {
   if (typeOfMessage.value === 'mantra') {
     mantras.push(message);
   }
+}
+
+function displayMessage() {
+  iconMessageArea.classList.remove('hidden');
+  mindfulIcon.classList.add('hidden');
+  iconMessageArea.innerText = message;
 }
 
 function randomizer(array) {
