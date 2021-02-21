@@ -68,7 +68,7 @@ function displayInputs() {
 }
 
 function addUserMessage() {
-  if (typeOfMessage.value === 'affirmation' || 'mantra') {
+  if (typeOfMessage.value === 'affirmation' || typeOfMessage.value === 'mantra') {
     message = messageInput.value;
     saveMessage();
     displayInputs();
