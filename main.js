@@ -2,6 +2,7 @@ var affirmationButton = document.querySelector('#affirmation');
 var mantraButton = document.querySelector('#mantra');
 var receiveMessageButton = document.querySelector('#receiveMessageButton');
 var iconMessageArea = document.querySelector('#iconShowMessage');
+var messageIconDisplay = document.querySelector('#messageIconDisplay');
 var mindfulIcon = document.querySelector('#mindfulIcon');
 var messageAddButton = document.querySelector('#messageAddButton');
 var errorMessage = document.querySelector('#errorMessage');
@@ -65,14 +66,16 @@ function displayInputs() {
     messageInput.classList.toggle('hidden');
     messageSubmit.classList.toggle('hidden');
     mindfulIcon.classList.add('hidden');
+    messageIconDisplay.classList.add('hidden');
 }
 
 function addUserMessage() {
-  if (typeOfMessage.value === 'affirmation' || typeOfMessage.value === 'mantra') {
+  var trimedMessage = typeOfMessage.value.trim();
+  if (trimedMessage === 'affirmation' || trimedMessage === 'mantra') {
     message = messageInput.value;
     saveMessage();
     displayInputs();
-    displayMessage();
+    displayUserMessage();
     errorMessage.classList.add('hidden');
   } else {
     errorMessage.classList.remove('hidden');
@@ -91,6 +94,14 @@ function saveMessage() {
 function displayMessage() {
   iconMessageArea.classList.remove('hidden');
   mindfulIcon.classList.add('hidden');
+  messageIconDisplay.classList.remove('hidden');
+  iconMessageArea.innerText = message;
+}
+
+function displayUserMessage() {
+  iconMessageArea.classList.remove('hidden');
+  mindfulIcon.classList.add('hidden');
+  messageIconDisplay.classList.remove('hidden');
   iconMessageArea.innerText = message;
 }
 

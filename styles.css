@@ -1,3 +1,120 @@
+
+html,
+body {
+  background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
+  height: 100%;
+  margin: 0;
+  font-family: Quicksand;
+}
+
+h1,
+h2 {
+  font-family: Quicksand;
+  font-size: 1.6em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+    padding-top: 40px;
+}
+
+h2 {
+    margin-top: 70px;
+    padding-bottom: 0px;
+    font-size: 1.2em;
+}
+
+button {
+  background-color: #134d71;
+  color: #ffffff;
+  font-family: Quicksand;
+}
+
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  padding-top: .5em;
+  font-style: italic;
+  color: #000000;
+}
+
+.click-button-receive {
+  padding: inherit;
+  display: flex;
+  justify-content: center;
+}
+
+.add-message-button {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.mindful-icon-section,
+.random-section {
+  background-color: #ffffff;
+  border-radius: 9px;
+  display: flex;
+}
+
+.random-section {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1px;
+  padding-bottom: 5px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-left: 360px;
+  margin-right: 360px;
+  margin-bottom: 50px;
+}
+
+.radio-buttons {
+  justify-content: space-around;
+  padding: inherit;
+  width: 20em;
+  padding: .5em;
+}
+
+.receive-message,
+.message-add {
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+}
+
+.mindful-icon-section {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  margin-left: 240px;
+  margin-right: 240px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.mindful-icon {
+  height: 65px;
+  width: 65px;
+}
+
+.hidden {
+  display: none;
+}
+
 /* font-family: 'Quicksand', sans-serif;
 COLORS
 light-yellow - #f7e4bf;
@@ -6,12 +123,3 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
-
-.mindful-icon {
-  height: 50px;
-  width: 50px;
-}
-
-.hidden {
-  display: none;
-}

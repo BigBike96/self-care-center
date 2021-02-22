@@ -6,26 +6,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1 class="page-title">Self Care Center</h1>
+    <h1 class="page-title">✨ Self Care Center ✨</h1>
     <h2 class="which-type">Which type of message?</h2>
     <main>
-      <section>
-        <input type="radio" name="choice" value="affirmation" id="affirmation">
-         <label>affirmation</label>
-        <input type="radio" name="choice" value="mantras" id="mantra">
-         <label>mantra</label>
-        <button type="button" name="receive-message" class="receive-message" id="receiveMessageButton">Receive Message</button>
+      <section class="random-section">
+        <div class="radio-buttons">
+          <input type="radio" name="choice" value="affirmation" id="affirmation">
+          <label>affirmation</label>
+          <input type="radio" name="choice" value="mantras" id="mantra">
+          <label>mantra</label>
+        </div>
+        <div class="click-button-receive">
+         <button type="button" name="receive-message" class="receive-message" id="receiveMessageButton">Receive Message</button>
+        </div>
       </section>
-      <section>
-        <img class="mindful-icon" src="./assets/meditate.svg" id="mindfulIcon">
-        <h3 class="icon hidden" id="iconShowMessage">icon/message</h3>
-        <input type="text" name="type-of-message" value="mantra or affirmation" class="type-of-input hidden" id="typeOfMessage">
-        <input type="text" name="message-input" value="Personal Message" class="message-input hidden" id="messageInput">
-        <button type="button" name="submit" class="submit-message hidden" id="messageSubmit">Submit</button>
-        <h5 class="error-message hidden" id="errorMessage">choose affirmation or mantra</h5>
+      <section class="mindful-icon-section">
+        <div id="messageIconDisplay">
+          <img class="mindful-icon" src="./assets/meditate.svg" id="mindfulIcon">
+          <p class="icon hidden" id="iconShowMessage">icon/message</p>
+        </div>
+        <div class="inputs-for-message">
+          <input type="text" name="type-of-message" value="mantra or affirmation" class="type-of-input hidden" id="typeOfMessage">
+          <input type="text" name="message-input" value="Personal Message" class="message-input hidden" id="messageInput">
+        </div>
+        <div class="submit-button">
+          <button type="button" name="submit" class="submit-message hidden" id="messageSubmit">Submit</button>
+        </div>
+          <h5 class="error-message hidden" id="errorMessage">choose affirmation or mantra</h5>
       </section>
-      <section>
-        <button type="button" name="add-message" id="messageAddButton">Add Message</button>
+      <section class="add-message-button">
+        <button type="button" name="add-message" class="message-add" id="messageAddButton">Add Message</button>
       </section>
     </main>
     <script type="text/javascript" src="main.js"></script>
