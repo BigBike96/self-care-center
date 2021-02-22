@@ -10,7 +10,6 @@ var typeOfMessage = document.querySelector('#typeOfMessage');
 var messageInput = document.querySelector('#messageInput');
 var messageSubmit = document.querySelector('#messageSubmit');
 
-
 var affirmations = [
   "I can whistle with my fingers, especially if I have a whistle.",
   "I wish I could play little league now. I'd be way better than before.",
@@ -68,7 +67,6 @@ function displayInputs() {
     messageSubmit.classList.toggle('hidden');
     mindfulIcon.classList.add('hidden');
     messageIconDisplay.classList.add('hidden');
-
 }
 
 function addUserMessage() {

@@ -1,24 +1,10 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
-* {
-  border: 1px solid peachpuff;
-}
 
 html,
 body {
   background: linear-gradient(#134d71, #78a7c6, #f7e4bf);
   height: 100%;
   margin: 0;
-}
-
-main {
-  height: 70%;
+  font-family: Quicksand;
 }
 
 h1,
@@ -31,12 +17,12 @@ h2 {
 }
 
 h1 {
-    margin: 45px;
+    padding-top: 40px;
 }
 
 h2 {
     margin-top: 70px;
-    margin-bottom: 0px;
+    padding-bottom: 0px;
     font-size: 1.2em;
 }
 
@@ -49,11 +35,13 @@ button {
 .radio-buttons {
   display: flex;
   justify-content: center;
-  font-family: sans-serif;
+  padding-top: .5em;
+  font-style: italic;
   color: #000000;
 }
 
 .click-button-receive {
+  padding: inherit;
   display: flex;
   justify-content: center;
 }
@@ -61,48 +49,56 @@ button {
 .add-message-button {
   display: flex;
   justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
+
 
 .mindful-icon-section,
 .random-section {
   background-color: #ffffff;
-  border-radius: 5px;
+  border-radius: 9px;
   display: flex;
 }
 
 .random-section {
   flex-direction: column;
   align-items: center;
-  /* width: 30em; */
-  padding-top: 5px;
+  padding-top: 1px;
   padding-bottom: 5px;
   padding-left: 75px;
   padding-right: 75px;
-  margin-left: 350px;
-  margin-right: 350px;
+  margin-left: 360px;
+  margin-right: 360px;
   margin-bottom: 50px;
 }
 
 .radio-buttons {
-  justify-content: space-between;
+  justify-content: space-around;
   padding: inherit;
   width: 20em;
-  padding: 1em;
+  padding: .5em;
 }
 
-.click-button-receive {
-  padding: inherit;
+.receive-message,
+.message-add {
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+
 }
 
 .mindful-icon-section {
   flex-direction: column;
   align-items: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
   padding-left: 75px;
   padding-right: 75px;
-  margin-top: 70px;
-  margin-bottom: 40px;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-top: 90px;
+  margin-bottom: 50px;
+  margin-left: 240px;
+  margin-right: 240px;
 }
 
 .submit-button {
@@ -119,6 +115,11 @@ button {
   display: none;
 }
 
-.not-visible {
-  visibility: hidden;
-}
+/* font-family: 'Quicksand', sans-serif;
+COLORS
+light-yellow - #f7e4bf;
+light-blue - #78a7c6;
+dark-blue - #134d71;
+white - #ffffff;
+black - #000000;
+*/
