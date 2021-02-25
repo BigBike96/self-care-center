@@ -48,8 +48,12 @@ var mantras = [
 var message;
 
 receiveMessageButton.addEventListener('click', prepareMessage);
-messageAddButton.addEventListener('click', displayInputs);
 messageSubmit.addEventListener('click', addUserMessage);
+
+messageAddButton.addEventListener('click', function() {
+  toggleElements([mindfulIcon, iconMessageArea], false);
+  toggleElements([typeOfMessage, messageInput, messageSubmit], true);
+})
 
 function prepareMessage() {
   if (affirmationButton.checked) {
@@ -58,15 +62,7 @@ function prepareMessage() {
   if (mantraButton.checked) {
     message = mantras[randomizer(mantras)];
   }
-  displayMessage();
-}
-
-function displayInputs() {
-    typeOfMessage.classList.toggle('hidden');
-    messageInput.classList.toggle('hidden');
-    messageSubmit.classList.toggle('hidden');
-    mindfulIcon.classList.add('hidden');
-    messageIconDisplay.classList.add('hidden');
+  displayTheMessage();
 }
 
 function addUserMessage() {
@@ -74,11 +70,19 @@ function addUserMessage() {
   if (trimedMessage === 'affirmation' || trimedMessage === 'mantra') {
     message = messageInput.value;
     saveMessage();
-    displayInputs();
-    displayUserMessage();
-    errorMessage.classList.add('hidden');
+    displayTheMessage();
   } else {
     errorMessage.classList.remove('hidden');
+  }
+}
+
+function toggleElements(elements, toShow) {
+  for (var i = 0; i < elements.length; i++) {
+    if (toShow) {
+      elements[i].classList.remove('hidden');
+    } else {
+      elements[i].classList.add('hidden');
+    }
   }
 }
 
@@ -91,17 +95,9 @@ function saveMessage() {
   }
 }
 
-function displayMessage() {
-  iconMessageArea.classList.remove('hidden');
-  mindfulIcon.classList.add('hidden');
-  messageIconDisplay.classList.remove('hidden');
-  iconMessageArea.innerText = message;
-}
-
-function displayUserMessage() {
-  iconMessageArea.classList.remove('hidden');
-  mindfulIcon.classList.add('hidden');
-  messageIconDisplay.classList.remove('hidden');
+function displayTheMessage() {
+  toggleElements([typeOfMessage, messageInput, messageSubmit, errorMessage, mindfulIcon], false);
+  toggleElements([iconMessageArea, messageIconDisplay], true);
   iconMessageArea.innerText = message;
 }
 
